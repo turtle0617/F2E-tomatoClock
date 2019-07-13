@@ -8,12 +8,13 @@ import "element-ui/lib/theme-chalk/index.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faPlayCircle,
+  faPlay,
   faBars,
   faChartBar,
   faMusic
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-library.add(faPlayCircle, faBars, faChartBar, faMusic);
+library.add(faPlayCircle, faBars, faChartBar, faMusic, faPlay);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
