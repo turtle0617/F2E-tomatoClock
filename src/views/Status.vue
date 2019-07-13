@@ -1,15 +1,18 @@
 <template lang="html">
   <el-row class="status">
     <Status_navbar />
+    <Status_todo />
   </el-row>
 </template>
 
 <script>
 import Status_navbar from "@/components/Status_navbar.vue";
+import Status_todo from "@/components/Status_todo.vue";
 export default {
   name: "status",
   components: {
-    Status_navbar
+    Status_navbar,
+    Status_todo
   }
 };
 </script>

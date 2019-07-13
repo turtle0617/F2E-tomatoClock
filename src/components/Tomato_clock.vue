@@ -18,8 +18,8 @@
           <div class="ongoing-mission__time">{{ time_clock }}:00</div>
         </div>
         <div class="mission-list">
-          <tmeplate v-for="(mission, index) in mission_list" :key="index">
-            <el-row class="mission-item" v-if="index < 3">
+          <template v-for="(mission, index) in mission_list">
+            <el-row class="mission-item" v-if="index < 3" :key="index">
               <el-col :span="20" class="mission-item__title">
                 <div class="mission-item__title--circle"></div>
                 <span>{{ mission }}</span>
@@ -27,7 +27,7 @@
               <el-col :span="4" class="mission-item__active el-icon-video-play">
               </el-col>
             </el-row>
-          </tmeplate>
+          </template>
           <div class="mission-list__footer" v-if="mission_list.length > 3">
             <span>MORE</span>
           </div>
