@@ -15,12 +15,8 @@
       </li>
     </ul>
     <div class="navbar-zoomout-clock">
-      <div class="clock clock-outside">
-        <div class="clock clock-middle">
-          <div class="clock-inside">
-            <font-awesome-icon class="play-icon" icon="play" size="2x" />
-          </div>
-        </div>
+      <div class="clock_container">
+        <font-awesome-icon class="play-icon" icon="play" size="2x" />
       </div>
       <div class="zoomout-clock__time">
         25:00
@@ -84,39 +80,20 @@ export default {
     font-size: 1rem;
   }
 }
-.clock-outside {
+.clock_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   max-height: 96px;
   max-width: 96px;
-  border: 7px solid #003164;
-  padding: 2px;
   background-color: #ff4384;
+  box-shadow: inset 0 0 0 5px #003164, 0 0 0 4px #ff4384, 0 0 0 11px #003164;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  left: 35%;
+  left: 37%;
   top: -15%;
-}
-.clock-middle {
-  border-radius: 50%;
-  background-color: #003164;
-  width: 95%;
-  height: 95%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.clock-inside {
-  width: 87%;
-  height: 87%;
-  background-color: #ff4384;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
 }
 .play-icon {
   color: white;

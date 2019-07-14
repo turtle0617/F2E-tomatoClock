@@ -1,5 +1,5 @@
 <template lang="html">
-  <el-col :span="8" class="status-todo">
+  <el-col :span="16" class="status-todo">
     <el-input
       class="add-mission--input"
       @keypress.enter.native="addMission"
@@ -49,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .status-todo {
-  margin-left: 125px;
+  padding-left: 125px;
 }
 .add-mission--input {
   /deep/ input {
