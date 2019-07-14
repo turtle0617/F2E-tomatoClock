@@ -1,7 +1,7 @@
 <template lang="html">
   <el-row class="status">
     <Status_navbar />
-    <Status_todo />
+    <Status_ringtones />
     <el-col :span="4" class="status-sideBar">
       <div class="sideBar__close-icon el-icon-close"></div>
       <div class="sideBar__logo-name">
@@ -13,12 +13,12 @@
 
 <script>
 import Status_navbar from "@/components/Status_navbar.vue";
-import Status_todo from "@/components/Status_todo.vue";
+import Status_ringtones from "@/components/Status_ringtones.vue";
 export default {
   name: "status",
   components: {
     Status_navbar,
-    Status_todo
+    Status_ringtones
   }
 };
 </script>
