@@ -1,5 +1,5 @@
 <template lang="html">
-  <el-col :span="16" class="status-todo">
+  <el-col :span="12" class="status-todo">
     <el-input
       class="add-mission--input"
       @keypress.enter.native="addMission"
