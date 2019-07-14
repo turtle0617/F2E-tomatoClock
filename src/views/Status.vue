@@ -1,7 +1,9 @@
 <template lang="html">
   <el-row class="status">
-    <Status_navbar />
-    <Status_ringtones />
+    <Status_navbar :page="page" @changeComponent="currentComponent" />
+    <transition name="fade" mode="out-in">
+      <component :is="page" />
+    </transition>
     <el-col :span="4" class="status-sideBar">
       <div class="sideBar__close-icon el-icon-close"></div>
       <div class="sideBar__logo-name">
@@ -13,17 +15,39 @@
 
 <script>
 import Status_navbar from "@/components/Status_navbar.vue";
-import Status_ringtones from "@/components/Status_ringtones.vue";
+import todo from "@/components/Status_todo.vue";
+import analytics from "@/components/Status_analytics.vue";
+import ringtones from "@/components/Status_ringtones.vue";
 export default {
   name: "status",
   components: {
     Status_navbar,
-    Status_ringtones
+    todo,
+    analytics,
+    ringtones
+  },
+  data() {
+    return {
+      page: "todo"
+    };
+  },
+  methods: {
+    currentComponent(changePage) {
+      this.page = changePage;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 .status {
   background-color: #003164;
   height: 100vh;

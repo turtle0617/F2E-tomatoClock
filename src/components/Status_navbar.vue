@@ -1,15 +1,27 @@
 <template lang="html">
   <el-col :span="8" class="status-navbar">
     <ul class="navbar-list">
-      <li>
+      <li
+        :class="{ active: highlight_nav.todo }"
+        class="page-status"
+        @click="changeComponent('todo')"
+      >
         <font-awesome-icon class="status-icon" icon="bars" size="2x" />
         <span>TO-DO LIST</span>
       </li>
-      <li>
+      <li
+        :class="{ active: highlight_nav.analytics }"
+        class="page-status"
+        @click="changeComponent('analytics')"
+      >
         <font-awesome-icon class="status-icon" icon="chart-bar" size="2x" />
         <span>ANALYTICS</span>
       </li>
-      <li>
+      <li
+        :class="{ active: highlight_nav.ringtones }"
+        class="page-status"
+        @click="changeComponent('ringtones')"
+      >
         <font-awesome-icon class="status-icon" icon="music" size="2x" />
         <span>RINGTONES</span>
       </li>
@@ -30,7 +42,25 @@
 
 <script>
 export default {
-  name: "status_navebar"
+  name: "status_navebar",
+  props: ["page"],
+  computed: {
+    highlight_nav() {
+      const nav_list = {
+        todo: false,
+        analytics: false,
+        ringtones: false
+      };
+      nav_list[this.page] = true;
+      return nav_list;
+    }
+  },
+  methods: {
+    changeComponent(changePage) {
+      if (this.page === changePage) return;
+      this.$emit("changeComponent", changePage);
+    }
+  }
 };
 </script>
 
@@ -40,6 +70,15 @@ export default {
   flex-wrap: wrap;
   height: 100%;
   position: relative;
+}
+.page-status {
+  cursor: pointer;
+  &:hover {
+    color: #ff4384;
+  }
+}
+.active {
+  color: #ff4384;
 }
 .navbar-list {
   color: #335a83;
