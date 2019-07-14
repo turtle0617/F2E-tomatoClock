@@ -44,6 +44,7 @@ export default {
 .navbar-list {
   color: #335a83;
   list-style: none;
+  margin-top: 0;
   span {
     padding-left: 0.5rem;
     font-family: "Roboto", sans-serif;
